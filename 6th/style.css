@@ -1,0 +1,176 @@
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    /* max-width: 800px; */
+    align-items: center;
+}
+.centr{
+    width: 800px;
+}
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+
+    transition: transform 0.2s ease;
+}
+
+a:hover {
+    transform: scale(1.1);
+}
+
+button{
+    border-radius: 15px;
+    color: rgb(118, 118, 147);
+    padding: 10px;
+font-weight: 700;
+font-size: 23px;
+box-shadow: none;
+background-color: #34445b;
+transition: all 0.25s ease;
+
+border: 0px;
+}
+button:hover {
+    background-color: #2563eb;
+    transform: scale(1.05);
+    color: aliceblue;
+}
+button:active {
+    transform: scale(0.97);
+}
+.intro{
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    
+    /* align-items: center; */
+    background-color: #1f2937;
+    padding: 20px 80px 40px 80px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.header{
+display: flex;
+justify-content: space-between;
+align-items: baseline;
+margin-bottom: 30px;
+}
+.logo{
+    font-size: 24px;
+    font-weight: 900;
+}
+.bar {
+    color: aliceblue;
+    display: flex;
+    gap: 20px;
+}
+.useless{
+    font-size: 48px;
+    font-weight: 900;
+}
+.photo{
+    background-color: aliceblue;
+    opacity: 0.5;
+    color: black;
+    display: flex;
+    flex: 1 300px;
+    justify-content: center;
+    align-items: center;
+    height: 220px;
+}
+.reg{
+    flex: 1 300px;
+}
+.wzimg{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+   
+}
+/* finally after so many i got it right yeah i know i used animation and transitions a lil but actually i just learnt them too and it worth it it now looks muuch better than it did before. And rate the compatibility for small screens i tryed make it good both on large and small screens */
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.boxex{
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+margin-bottom: 30px;
+flex-wrap: wrap;
+}
+.jstbx{
+    height: 150px;
+    width: 150px;
+    background-color: rgb(247, 255, 255);
+    border: 3px solid;
+    border-color: #2563eb;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+.txt{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    color: #1f2937;
+}
+.faa{
+    /* height: 150px; */
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+}
+.someinf{
+    font-size: 38px;
+    font-weight: 900;
+    text-align: center;
+    margin: 50px
+}
+.insp{
+    display: flex;
+    flex-direction: column;
+    padding: 60px;
+    background-color: #e5e7eb;
+    align-items: center;
+}
+.quote{
+    font-size: 36px;
+    font-weight: 300;
+    
+    flex: 1;
+    max-width: 800px;
+}
+.author{
+    font-weight: 900;
+    font-size: 36px;
+    flex: 1;
+    max-width: 800px;
+    align-self: flex-end;
+}
+.bye{
+    padding: 70px;
+}
+.pad{
+    padding: 30px 60px 30px 60px;
+    background-color: #2563eb;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.call{
+    font-size: 24px;
+    color: white;
+}
+.notcul{
+    color: aliceblue;
+}
+.none {
+    padding: 40px;
+    background-color: #1f2937;
+    color: aliceblue;
+    justify-content: center;
+    display: flex;
+}
