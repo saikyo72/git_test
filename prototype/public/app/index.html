@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ClassPay — Student Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>ClassPay — Student Dashboard</h1>
+        <div id="auth-area">
+          <button id="btn-logout" class="btn small">Logout</button>
+        </div>
+      </header>
+
+      <main>
+        <section id="login-section" class="card">
+          <h2>Sign In</h2>
+          <form id="login-form">
+            <input type="email" id="email" placeholder="Email" required />
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              required
+            />
+            <button class="btn" type="submit">Login</button>
+          </form>
+          <div class="muted">Use an existing account or register via API.</div>
+        </section>
+
+        <section id="dashboard" class="hidden">
+          <h2>Your Joined Rooms</h2>
+          <div id="rooms" class="grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <template id="room-card-template">
+      <div class="room-card card">
+        <h3 class="room-name"></h3>
+        <p class="room-purpose muted"></p>
+        <div class="meta">
+          <div>Amount: <span class="room-amount"></span></div>
+          <div>Join code: <span class="room-joincode muted"></span></div>
+        </div>
+        <div class="actions">
+          <label class="btn upload-btn">
+            Upload Receipt
+            <input
+              type="file"
+              accept="image/*"
+              class="file-input"
+              style="display: none"
+            />
+          </label>
+        </div>
+        <div class="status-area"></div>
+      </div>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>

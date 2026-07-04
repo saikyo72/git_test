@@ -1,0 +1,88 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Prisma schema for ClassPay MVP
+
+model User {
+  id         Int          @id @default(autoincrement())
+  name       String
+  email      String       @unique
+  password   String
+  role       String       @default("student")
+  createdAt  DateTime     @default(now())
+
+  roomsOwned Room[]       @relation("owner")
+  memberships Membership[]
+  payments   Payment[]
+  reviewedPayments Payment[] @relation("reviewer")
+}
+
+model Room {
+  id          Int          @id @default(autoincrement())
+  name        String
+  description String?
+  purpose     String?
+  // amount stored in smallest currency unit (e.g., UZS so 75000 -> 75000)
+  amount      Int
+  joinCode    String       @unique
+  ownerId     Int
+  createdAt   DateTime     @default(now())
+
+  owner       User         @relation("owner", fields: [ownerId], references: [id])
+  memberships Membership[]
+  payments    Payment[]
+}
+
+model Membership {
+  id       Int      @id @default(autoincrement())
+  user     User     @relation(fields: [userId], references: [id])
+  userId   Int
+  room     Room     @relation(fields: [roomId], references: [id])
+  roomId   Int
+  joinedAt DateTime @default(now())
+
+  @@unique([userId, roomId])
+  @@index([roomId])
+}
+
+model Payment {
+  id              Int      @id @default(autoincrement())
+  user            User     @relation(fields: [userId], references: [id])
+  userId          Int
+  room            Room     @relation(fields: [roomId], references: [id])
+  roomId          Int
+  imagePath       String
+  extractedAmount Int?
+  status          String   @default("pending") // pending | approved | rejected
+  reviewedBy      Int?
+  reviewedByUser  User?    @relation("reviewer", fields: [reviewedBy], references: [id])
+  reviewedAt      DateTime?
+  uploadedAt      DateTime @default(now())
+
+  @@index([roomId])
+  @@index([userId])
+}
+
+model AuditLog {
+  id        Int      @id @default(autoincrement())
+  action    String
+  actorId   Int?
+  actor     User?    @relation(fields: [actorId], references: [id])
+  roomId    Int?
+  room      Room?    @relation(fields: [roomId], references: [id])
+  paymentId Int?
+  payment   Payment? @relation(fields: [paymentId], references: [id])
+  details   Json?
+  createdAt DateTime @default(now())
+
+  @@index([roomId])
+  @@index([paymentId])
+  @@index([actorId])
+}
+
