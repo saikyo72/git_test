@@ -1,0 +1,26 @@
+{
+  "name": "letsgetbackonbich",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "css-loader": "^7.1.4",
+    "eslint": "^10.9.1",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.8",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.109.2",
+    "webpack-cli": "^7.2.2",
+    "webpack-dev-server": "^6.0.0"
+  }
+}
